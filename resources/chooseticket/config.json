@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"cid": {
+			"name": "cid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cid",
+			"order": 0
+		},
+		"uid": {
+			"name": "uid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "uid",
+			"order": 1
+		},
+		"mid": {
+			"name": "mid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mid",
+			"order": 2
+		},
+		"fid": {
+			"name": "fid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fid",
+			"order": 3
+		},
+		"cdate": {
+			"name": "cdate",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "cdate",
+			"order": 4
+		}
+	}
+}

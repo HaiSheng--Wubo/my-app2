@@ -1,0 +1,5 @@
+1.首先在这个网址中安装到deployd（根据系统选择和配置path路径）
+http://docs.deployd.com/docs/getting-started/installing-deployd.html
+
+2.安装完成之后，直接运行app.dpd即可，默认端口是2403.即，通过localhost:2403可以直接访问到public文件夹下的Index.html文件
+如果要运行public文件夹下的其他的文件,localhost:2403/文件名.html  即可

@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"mid": {
+			"name": "mid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mid",
+			"order": 0
+		},
+		"mname": {
+			"name": "mname",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mname",
+			"order": 1
+		},
+		"mdescription": {
+			"name": "mdescription",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mdescription",
+			"order": 2
+		},
+		"mprice": {
+			"name": "mprice",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mprice",
+			"order": 3
+		}
+	}
+}

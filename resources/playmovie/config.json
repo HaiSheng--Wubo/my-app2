@@ -1,0 +1,61 @@
+{
+	"type": "Collection",
+	"properties": {
+		"fid": {
+			"name": "fid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fid",
+			"order": 0
+		},
+		"tid": {
+			"name": "tid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "tid",
+			"order": 1
+		},
+		"mid": {
+			"name": "mid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "mid",
+			"order": 2
+		},
+		"frftb": {
+			"name": "frftb",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "frftb",
+			"order": 3
+		},
+		"frfte": {
+			"name": "frfte",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "frfte",
+			"order": 4
+		},
+		"fstate": {
+			"name": "fstate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fstate",
+			"order": 5
+		},
+		"fstatetext": {
+			"name": "fstatetext",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fstatetext",
+			"order": 6
+		}
+	}
+}

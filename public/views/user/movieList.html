@@ -1,0 +1,61 @@
+<style>
+    .movie-list{
+        width:100%;
+        border:1px solid red;
+    }
+    .movie{
+        width:20%;
+        margin-left:2%;
+        margin-right:1%;
+        margin-top:2%;
+        margin-bottom: 2%;
+        float:left;
+        background-color:rgba(234, 234, 234,1.0) ;
+        border:1px solid rgba(234, 234, 234,0.5);
+        border-radius: 2px;
+    }
+    .movie:hover{
+        background-color: rgba(238, 229, 222,0.8);
+    }
+    .movie .m-left{
+        width:80%;
+    }
+    .movie .m-left .m-name{
+        width:100%;
+        color:black;
+        text-align: center;
+        font-size:1.5rem;
+    }
+    .movie .m-left .m-dec{
+        width:100%;
+        color:RGBA(190,190,190,0.8);
+        text-align: center;
+        font-size:0.9rem;
+    }
+    .movie .m-left .m-price{
+        width:100%;
+        color:RGBA(227, 49, 13,0.9);
+    }
+    .movie .m-right{
+        width:20%;
+    }
+    .movie .m-right
+</style>
+<div class="movie-list" ng-controller="movieListCtrl">
+    <div class="movie" ng-repeat="item in movieList">
+        <div class="m-left">
+            <div class="m-name">
+                <p>{{item.mname}}</p>
+            </div>
+            <div class="m-dec">
+                <p>{{item.mdescription}}</p>
+            </div>
+            <div class="m-price">
+                <p>{{"￥" + item.mprice}}</p>
+            </div>
+        </div>
+        <div class="m-right text-center">
+            <a class="btn btn-xs btn-primary">选电影</a>
+        </div>
+    </div>
+</div>

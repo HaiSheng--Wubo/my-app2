@@ -1,0 +1,55 @@
+<style>
+    .seatTable{
+        width:auto;
+    }
+    .seatTable td{
+        max-width:200px;
+        overflow: hidden;
+    }
+    .seatTable td input{
+        max-width:100px;
+        margin:0 auto;
+    }
+</style>
+<div ng-controller="manageSeatCtrl">
+    <!--增加-->
+    <table class=" seatTable table table-striped table-bordered">
+        <tr>
+            <th>厅号id</th>
+            <th>行数</th>
+            <th>列数</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in seats" ng-hide="item.id == editedSeat.id">
+            <td ng-class="{danger:(seatrepeat && editedSeat.tid == item.tid)}">{{item.tid + "号厅"}}</td>
+            <td>{{item.srow + "行"}}</td>
+            <td>{{item.scol + "列"}}</td>
+            <td>
+                <button ng-click="startEdit(item)" class="btn btn-xs btn-primary">
+                    编辑
+                </button>
+                <button ng-click="deleteSeat(item)" class="btn btn-xs btn-primary">
+                    删除
+                </button>
+            </td>
+        </tr>
+    </table>
+    <!--增加或修改-->
+    <table class="seatTable table table-striped table-bordered">
+        <tr>
+            <th>厅号id</th>
+            <th>行数</th>
+            <th>列数</th>
+            <th></th>
+        </tr>
+        <tr ng-class="{danger:editedSeat}">
+            <td><input ng-model="editedSeat.tid" required/></td>
+            <td><input ng-model="editedSeat.srow" required/></td>
+            <td><input ng-model="editedSeat.scol" required/></td>
+            <td>
+                <button ng-hide="editedSeat.id" ng-click="createSeat(editedSeat)" class="btn btn-xs btn-primary">创建</button>
+                <button ng-show="editedSeat.id" ng-click="updateSeat(editedSeat)" class="btn btn-xs btn-primary">保存</button>
+                <button ng-show="editedSeat" ng-click="cancelEdit()" class="btn btn-xs btn-primary">取消</button>
+            </td>
+    </table>
+</div>

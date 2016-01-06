@@ -1,0 +1,73 @@
+<style>
+    .playMovieTable{
+        width:auto;
+    }
+    .playMovieTable td{
+        max-width:200px;
+        overflow: hidden;
+    }
+    .playMovieTable td input{
+        max-width:100px;
+        margin:0 auto;
+
+        font-size:2px;
+    }
+</style>
+<div ng-controller="managePlayMovieCtrl">
+    <!--增加-->
+    <table class=" playMovieTable table table-striped table-bordered">
+        <tr>
+            <th>放映id</th>
+            <th>厅id</th>
+            <th>电影id</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th>放映状态</th>
+            <th>放映状态说明</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in playMovies" ng-hide="item.id == editedPlayMovie.id">
+            <td ng-class="{danger:(playMovierepeat && editedPlayMovie.fid == item.fid)}">{{item.fid}}</td>
+            <td>{{item.tid + "号厅"}}</td>
+            <td>{{item.mid}}</td>
+            <td>{{item.feftb}}</td>
+            <td>{{item.fefte}}</td>
+            <td>{{item.fstate}}</td>
+            <td>{{item.fstatetext}}</td>
+            <td>
+                <button ng-click="startEdit(item)" class="btn btn-xs btn-primary">
+                    编辑
+                </button>
+                <button ng-click="deletePlayMovie(item)" class="btn btn-xs btn-primary">
+                    删除
+                </button>
+            </td>
+        </tr>
+    </table>
+    <!--增加或修改-->
+    <table class="playMovieTable table table-striped table-bordered">
+        <tr>
+            <th>放映id</th>
+            <th>厅id</th>
+            <th>电影id</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th>放映状态</th>
+            <th>放映状态说明</th>
+            <th></th>
+        </tr>
+        <tr ng-class="{danger:editedPlayMovie}">
+            <td><input ng-model="editedPlayMovie.fid" required/></td>
+            <td><input ng-model="editedPlayMovie.tid" required/></td>
+            <td><input ng-model="editedPlayMovie.mid" required/></td>
+            <td><input ng-model="editedPlayMovie.feftb" required/></td>
+            <td><input ng-model="editedPlayMovie.fefte"  required/></td>
+            <td><input ng-model="editedPlayMovie.fstate" required/></td>
+            <td><input ng-model="editedPlayMovie.fstatetext" required/></td>
+            <td>
+                <button ng-hide="editedPlayMovie.id" ng-click="createPlayMovie(editedPlayMovie)" class="btn btn-xs btn-primary">创建</button>
+                <button ng-show="editedPlayMovie.id" ng-click="updatePlayMovie(editedPlayMovie)" class="btn btn-xs btn-primary">保存</button>
+                <button ng-show="editedPlayMovie" ng-click="cancelEdit()" class="btn btn-xs btn-primary">取消</button>
+            </td>
+    </table>
+</div>

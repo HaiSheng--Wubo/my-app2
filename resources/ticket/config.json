@@ -1,0 +1,61 @@
+{
+	"type": "Collection",
+	"properties": {
+		"pid": {
+			"name": "pid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "pid",
+			"order": 0
+		},
+		"pseat": {
+			"name": "pseat",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "pseat",
+			"order": 1
+		},
+		"pstate": {
+			"name": "pstate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "pstate",
+			"order": 2
+		},
+		"psatetext": {
+			"name": "psatetext",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "psatetext",
+			"order": 3
+		},
+		"fid": {
+			"name": "fid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fid",
+			"order": 4
+		},
+		"uid": {
+			"name": "uid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "uid",
+			"order": 5
+		},
+		"pdate": {
+			"name": "pdate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "pdate",
+			"order": 6
+		}
+	}
+}

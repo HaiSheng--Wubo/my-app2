@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"tid": {
+			"name": "tid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "tid",
+			"order": 0
+		},
+		"srow": {
+			"name": "srow",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "srow",
+			"order": 1
+		},
+		"scol": {
+			"name": "scol",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "scol",
+			"order": 2
+		}
+	}
+}

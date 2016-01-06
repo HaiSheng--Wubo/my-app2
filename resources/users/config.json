@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"username": {
+			"name": "username",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "username",
+			"order": 0
+		},
+		"password": {
+			"name": "password",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "password",
+			"order": 1
+		},
+		"permission": {
+			"name": "permission",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "permission",
+			"order": 2
+		},
+		"uid": {
+			"name": "uid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "uid",
+			"order": 3
+		},
+		"pertext": {
+			"name": "pertext",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "pertext",
+			"order": 4
+		}
+	}
+}

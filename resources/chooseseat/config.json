@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"sid": {
+			"name": "sid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "sid",
+			"order": 0
+		},
+		"fid": {
+			"name": "fid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fid",
+			"order": 1
+		},
+		"cid": {
+			"name": "cid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "cid",
+			"order": 2
+		}
+	}
+}

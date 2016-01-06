@@ -1,0 +1,21 @@
+<style>
+    .center{
+        width:50%;
+        margin:100px auto;
+    }
+</style>
+<div class="well center" ng-controller="LoginController">
+    <form name="login-form" novalidate>
+        <div class="form-group">
+            <label>用户名</label>
+            <input name="username" type="text" ng-model="username" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+            <input name="password" type="password" ng-model="password" class="form-control" required/>
+        </div>
+        <div class="text-center">
+            <button ng-click="CheckUser(username,password)" ng-disabled = "login-form.$invalid" class="btn btn-primary">登陆</button>
+        </div>
+    </form>
+</div>

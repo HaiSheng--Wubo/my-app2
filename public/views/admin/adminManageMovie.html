@@ -1,0 +1,70 @@
+<style>
+    .movieTable{
+        width:auto;
+    }
+    .movieTable td{
+        max-width:500px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .movieTable td input{
+        max-width:200px;
+        margin:0 auto;
+    }
+    .add-dec{
+        width:100%;
+
+        text-align: center;
+        color:black;
+        font-size:20px;
+    }
+</style>
+<!--<hr/>-->
+<!--<div class="add-dec">列表</div>-->
+<div ng-controller="manageMovieCtrl">
+    <table class=" movieTable table table-striped table-bordered table-hover ">
+        <tr>
+            <th>电影id</th>
+            <th>电影名称</th>
+            <th>电影说明</th>
+            <th>参考价格</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in movies" ng-hide="item.id == editedMovie.id">
+            <td ng-class="{danger:(repeat || editedMovie.mid == item.mid)}">{{item.mid}}</td>
+            <td>{{item.mname}}</td>
+            <td>{{item.mdescription}}</td>
+            <td>{{item.mprice + "元"}}</td>
+            <td>
+                <button ng-click="startEdit(item)" class="btn btn-xs btn-primary">
+                    编辑
+                </button>
+                <button ng-click="deleteMovie(item)" class="btn btn-xs btn-primary">
+                    删除
+                </button>
+            </td>
+        </tr>
+    </table>
+    <!--<hr/>-->
+    <!--<div class="add-dec">增加/修改</div>-->
+    <table class="movieTable table table-striped table-bordered">
+        <tr>
+            <th>电影id</th>
+            <th>电影名称</th>
+            <th>电影说明</th>
+            <th>参考价格</th>
+            <th></th>
+        </tr>
+        <tr ng-class="{danger:editedMovie}">
+            <td><input ng-model="editedMovie.mid" required/></td>
+            <td><input ng-model="editedMovie.mname" required/></td>
+            <td><input ng-model="editedMovie.mdescription" required/></td>
+            <td><input ng-model="editedMovie.mprice" required/></td>
+            <td>
+                <button ng-hide="editedMovie.id" ng-click="createMovie(editedMovie)" class="btn btn-xs btn-primary">创建</button>
+                <button ng-show="editedMovie.id" ng-click="updateMovie(editedMovie)" class="btn btn-xs btn-primary">保存</button>
+                <button ng-show="editedMovie" ng-click="cancelEdit()" class="btn btn-xs btn-primary">取消</button>
+            </td>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+<style>
+    .menu a{
+        font-size:15px;
+        min-width: 120px;;
+    }
+</style>
+<div class="panel panel-default row" ng-controller="manageListCtrl">
+    <div class="col-xs-2 panel-body menu">
+        <a class="btn btn-block btn-default" ng-repeat="item in listMenu"
+           ng-click="setScreen($index)" ng-class="{'btn-primary':item == currentMenu}">
+            {{item}}
+        </a>
+    </div>
+    <div class="col-xs-9 panel-body">
+        <div ng-include="getScreen()"></div>
+    </div>
+</div>

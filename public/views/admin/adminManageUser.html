@@ -1,0 +1,63 @@
+<style>
+    .userTable{
+        width:auto;
+    }
+    .userTable td{
+        max-width:200px;
+        overflow: hidden;
+    }
+    .userTable td input{
+        max-width:100px;
+        margin:0 auto;
+    }
+</style>
+<div ng-controller="manageUserCtrl">
+    <!--增加-->
+    <table class=" userTable table table-striped table-bordered">
+        <tr>
+            <th>用户id</th>
+            <th>用户登录名</th>
+            <th>用户密码</th>
+            <th>用户权限</th>
+            <th>权限说明</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in users" ng-hide="item.id == editedUser.id">
+            <td ng-class="{danger:(userrepeat && editedUser.uid == item.uid)}">{{item.uid}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.password}}</td>
+            <td>{{item.permission}}</td>
+            <td>{{item.pertext}}</td>
+            <td>
+                <button ng-click="startEdit(item)" class="btn btn-xs btn-primary">
+                    编辑
+                </button>
+                <button ng-click="deleteUser(item)" class="btn btn-xs btn-primary">
+                    删除
+                </button>
+            </td>
+        </tr>
+    </table>
+    <!--增加或修改-->
+    <table class="userTable table table-striped table-bordered">
+        <tr>
+            <th>用户id</th>
+            <th>用户登录名</th>
+            <th>用户密码</th>
+            <th>用户权限</th>
+            <th>权限说明</th>
+            <th></th>
+        </tr>
+        <tr ng-class="{danger:editedUser}">
+            <td><input ng-model="editedUser.uid" required/></td>
+            <td><input ng-model="editedUser.username" required/></td>
+            <td><input ng-model="editedUser.password" required/></td>
+            <td><input ng-model="editedUser.permission" required/></td>
+            <td><input ng-model="editedUser.pertext" required/></td>
+            <td>
+                <button ng-hide="editedUser.id" ng-click="createUser(editedUser)" class="btn btn-xs btn-primary">创建</button>
+                <button ng-show="editedUser.id" ng-click="updateUser(editedUser)" class="btn btn-xs btn-primary">保存</button>
+                <button ng-show="editedUser" ng-click="cancelEdit()" class="btn btn-xs btn-primary">取消</button>
+            </td>
+    </table>
+</div>
