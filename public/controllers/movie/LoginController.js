@@ -29,7 +29,7 @@ movie.constant("userUrl","http://localhost:2403/users")
     .factory("currentuser",function($http){
         return {
             addUser:function(name,text){
-                $http.post("http://localhost:2403/currentuser",{"name":name,"text":text});
+                $http.post("http://localhost:2403/currentuser",[{"name":name,"text":text}]);
             },
             getUser:function(){
                $http.get("http://localhost:2403/currentuser").success(function(data){

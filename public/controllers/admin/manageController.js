@@ -71,7 +71,7 @@ admin.constant("moviesUrl","http://localhost:2403/movies/")
             $http.get(moviesUrl).success(function(data){
                 $scope.movieData = data;
                 for(var i = 0;i < $scope.movieData.length; i++){
-                    if(movie.mid == $scope.movieData[i].mid){
+                    if(movie.mid == $scope.movieData[i].mid && movie.id != $scope.movieData[i].id){
                         $scope.repeat = true;
                         break;
                     }else{

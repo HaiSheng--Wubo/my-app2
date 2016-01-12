@@ -1,61 +1,158 @@
 <style>
-    .movie-list{
+    html{
         width:100%;
-        border:1px solid red;
+        font-size:60%;
+    }
+    .movie-list{
+        position: relative;
+        width:100%;
+        max-width:600px;
+        margin:0 auto;
+        cursor: hand;
+        overflow: hidden;
+    }
+    .movie-list .menu{
+        position: absolute;
+        width:100%;
+        z-index:-1;
+    }
+    .movie-list .menu .u-head{
+        width:100%;
+        padding-top: 8%;;
+        background-color: dodgerblue;
+    }
+    .movie-list .menu .u-list{
+        position: relative;
+        width: 100%;
+        padding-top: 10%;
+        padding-bottom: 3%;
+        border-bottom: 1px solid rgba(240, 240, 240,1.0);
+    }
+    .movie-list .menu .u-list img{
+        position: absolute;
+        left: 5%;
+        top: 17%;
+        width: 8%;
+        display: block;
+    }
+    .movie-list .menu .u-list p{
+        position: absolute;
+        left: 16%;
+        top: 29%;
+        font-size: 3rem;
+        color: dodgerblue;
+    }
+    .movie-list .list{
+        width:100%;
+        background-color: rgba(41, 190 ,223, 1.0);
+    }
+    .movie-list .list .m-menu{
+        position: relative;
+        width:100%;
+        padding-top: 8%;;
+        background-color: dodgerblue;
+    }
+    .movie-list .list .m-menu img{
+        position: absolute;
+        top: 27%;
+        left: 3%;
+        display: block;
+        width: 4%;
+        cursor: pointer;
+    }
+    .movie-list .list .m-list-c{
+        width:100%;
+        margin:0 auto;
+        background-color: rgba(41, 190 ,223, 1.0);
     }
     .movie{
         width:20%;
-        margin-left:2%;
-        margin-right:1%;
+        margin-left:10%;
         margin-top:2%;
         margin-bottom: 2%;
-        float:left;
+        display: inline-block;
         background-color:rgba(234, 234, 234,1.0) ;
-        border:1px solid rgba(234, 234, 234,0.5);
         border-radius: 2px;
     }
     .movie:hover{
-        background-color: rgba(238, 229, 222,0.8);
+        border:1px solid rgba(41, 190 ,223, 1.0);
     }
     .movie .m-left{
-        width:80%;
+        width:100%;
+    }
+    .movie .m-left .m-photo{
+        width:100%;
+    }
+    .movie .m-left .m-photo img{
+        width:100%;
     }
     .movie .m-left .m-name{
         width:100%;
-        color:black;
         text-align: center;
-        font-size:1.5rem;
-    }
-    .movie .m-left .m-dec{
-        width:100%;
-        color:RGBA(190,190,190,0.8);
-        text-align: center;
-        font-size:0.9rem;
+        font-size:2rem;
+        line-height: 2rem;
+        background-color: rgba(134,32,32,0.5);
     }
     .movie .m-left .m-price{
         width:100%;
+        font-size:2.6rem;
+        line-height:1.5rem;
+        text-align: center;
         color:RGBA(227, 49, 13,0.9);
     }
-    .movie .m-right{
-        width:20%;
-    }
-    .movie .m-right
 </style>
+<script>
+$(document).ready(function(){
+    var flag = 0;
+    $("#m-menu").click(function(){
+        if(flag == 0){
+            $("#list").animate({marginLeft:"80%"});
+            flag = 1;
+        }else if(flag == 1){
+            $("#list").animate({marginLeft:0});
+            flag = 0;
+        }
+    })
+})
+</script>
 <div class="movie-list" ng-controller="movieListCtrl">
-    <div class="movie" ng-repeat="item in movieList">
-        <div class="m-left">
-            <div class="m-name">
-                <p>{{item.mname}}</p>
-            </div>
-            <div class="m-dec">
-                <p>{{item.mdescription}}</p>
-            </div>
-            <div class="m-price">
-                <p>{{"￥" + item.mprice}}</p>
-            </div>
+    <div class="menu">
+        <div class="u-head"></div>
+        <div class="u-list">
+            <img src="../../img/menu_01.png" alt=""/>
+            <p>电影城</p>
         </div>
-        <div class="m-right text-center">
-            <a class="btn btn-xs btn-primary">选电影</a>
+        <div class="u-list">
+            <img src="../../img/menu_02.png" alt=""/>
+            <p>个人中心</p>
+        </div>
+        <div class="u-list">
+            <img src="../../img/menu_03.png" alt=""/>
+            <p>设置</p>
+        </div>
+        <div class="u-list">
+            <img src="../../img/menu_04.png" alt=""/>
+            <p>退出</p>
+        </div>
+    </div>
+    <div class="list" id="list">
+        <div class="m-menu" id="m-menu">
+            <img src="../../img/btn-menu.png" alt=""/>
+        </div>
+        <div class="m-list-c">
+            <div class="movie" ng-repeat="item in movieList">
+                <div class="m-left">
+                    <div class="m-photo">
+                        <img src="../../img/movie.jpg" alt=""/>
+                    </div>
+                    <div class="m-name">
+                        <p>{{item.mname}}</p>
+                    </div>
+                    <div class="m-price">
+                        <p>{{"￥" + item.mprice}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
